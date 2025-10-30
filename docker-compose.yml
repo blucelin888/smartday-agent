@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  smartday:
+    build: .
+    container_name: smartday
+    restart: always
+    ports:
+      - "8000:8000"
