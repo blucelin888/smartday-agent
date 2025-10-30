@@ -1,0 +1,30 @@
+{
+  "agent_name": "SmartDay Planner",
+  "version": "0.1.0",
+  "owner": "Zhuofan Lin",
+  "public_endpoint": "https://agent.yourdomain.com/plan",
+  "healthcheck": "https://agent.yourdomain.com/health",
+  "description": "Turns rough daily goals into a structured, time-blocked plan honoring constraints (e.g., evening gym).",
+  "inputs": {
+    "available_hours": "float",
+    "start_time": "HH:MM (optional, defaults 09:00)",
+    "tasks": [
+      { "name": "string", "duration": "float", "priority": "low|medium|high (optional)", "constraint": "morning|afternoon|evening|after:HH:MM|before:HH:MM (optional)" }
+    ]
+  },
+  "outputs": {
+    "date": "YYYY-MM-DD",
+    "total_hours": "float",
+    "blocks": [
+      { "start": "HH:MM", "end": "HH:MM", "task": "string", "notes": "string|null" }
+    ],
+    "checklist": ["[ ] Task (xh)"]
+  },
+  "capabilities": ["time_allocation","constraint_scheduling","checklist_generation"],
+  "society_tags": ["daily_planning","productivity","education"],
+  "auth": "none",
+  "rate_limits": "demo only",
+  "contact": "you@example.com",
+  "license": "MIT",
+  "registry_notes": "Part of SmartDay society (Input -> Time Allocation -> Planner -> Summary)."
+}
